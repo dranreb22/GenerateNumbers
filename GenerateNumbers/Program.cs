@@ -7,7 +7,8 @@ namespace GenerateNumbers
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Please enter the number of values you want generated!");
+            Console.WriteLine("Please enter the number of values you want generated! This will" +
+                "also be the range of numbers to be generated!");
             Random random = new Random();
 
             int n = Convert.ToInt32(Console.ReadLine());
@@ -15,7 +16,7 @@ namespace GenerateNumbers
             int[] array = new int[n];
             for (int i = 0; i < array.Length; i++)
             {
-                array[i] = random.Next(0, 100);
+                array[i] = random.Next(0, n);
             }
 
             using (StreamWriter sw = new StreamWriter(fileName))
